@@ -1,0 +1,7 @@
+pipeline{
+   agent {
+     label "slave-1-labels'"
+   }
+steps{
+  step("git clone"){
+       git
