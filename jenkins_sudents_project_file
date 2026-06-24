@@ -5,13 +5,13 @@ pipeline{
 stages {
   stage ("git clone"){
     steps{
-            git branch: 'main', url: 'https://github.com/Ranjankumarjena-rj/jenkins_repo_hub.git'
+            git branch: 'main', https://github.com/Ranjankumarjena-rj/students-project.git'
       }
     }
-//  stage  ("maven package") {
- //    steps {
-   //      sh 'mvn clean package'
- //           }
-// }
+ stage  ("maven package") {
+   steps {
+    sh 'mvn clean package'
+            }
+ }
 }
 }
