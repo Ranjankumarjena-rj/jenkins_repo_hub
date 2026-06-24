@@ -2,7 +2,7 @@ pipeline{
    agent {
      label "slave-1-labels"
    }
-steges {
+stages {
   stage ("git clone"){
     steps{
             git branch: 'main', url: 'https://github.com/Ranjankumarjena-rj/jenkins_repo_hub.git'
