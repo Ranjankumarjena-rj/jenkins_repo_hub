@@ -1,7 +1,15 @@
 pipeline{
    agent {
-     label "slave-1-labels'"
+     label "slave-1-labels"
    }
-steps{
-  step("git clone"){
-       git
+steges {
+  stage ("git clone"){
+    steps{
+            git branch: 'main', url: 'https://github.com/Ranjankumarjena-rj/jenkins_repo_hub.git'
+      }
+    }
+//  stage  ("maven package") {
+ //    steps {
+   //      sh 'mvn clean package'
+ //           }
+// }
