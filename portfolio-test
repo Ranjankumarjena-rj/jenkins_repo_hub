@@ -15,7 +15,7 @@ stages {
           }
   stage ("tomcat deploy") {
     steps{
-       sh 'sudo cp /home/ubuntu/workspace/portfolio-test/target/portfolio /var/lib/tomcat10/webapps '
+       sh 'sudo cp /home/ubuntu/workspace/portfolio-test/target/portfolio-1.0.war /var/lib/tomcat10/webapps '
          }
       }
    }
