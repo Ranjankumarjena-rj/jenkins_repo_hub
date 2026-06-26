@@ -1,0 +1,22 @@
+pipeline{
+   agent {
+     label "slave-1-labels"
+   }
+stages {
+  stage ("git clone"){
+    steps{
+            git branch: 'main', url: 'https://github.com/Ranjankumarjena-rj/portfolio-test.git'
+      }
+    }
+ stage  ("maven package") {
+   steps {
+    sh 'mvn clean package'
+            }
+          }
+  stage ("tomcat deploy") {
+    steps{
+       sh 'sudo cp /home/ubuntu/workspace/student-service/target/students-project-1.0.war /var/lib/tomcat10/webapps '
+         }
+      }
+   }
+}
